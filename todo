@@ -1,0 +1,67 @@
+#! /usr/bin/env python
+
+from os import path
+import json
+from komandr import command, arg, main
+
+
+class db:
+    _PATH = '/tmp/todo.db'
+
+    def __init__(self, path=None):
+        self.path = path or self._PATH
+
+    def __enter__(self):
+        if path.exists(self.path):
+            with open(self.path, 'rw') as f:
+                self.todos = json.loads(f.read())
+        else:
+            self.todos = []
+        self.orig = self.todos[:]
+        return self.todos
+
+    def __exit__(self, type, value, tb):
+        if self.todos != self.orig:
+            with open(self.path, 'w') as f:
+                f.write(json.dumps(self.todos))
+
+
+@command
+def add(todo):
+    with db() as todos:
+        todos.append(todo)
+
+
+@command
+@arg('index', type=int)
+def delete(index):
+    with db() as todos:
+        try:
+            del todos[index]
+        except:
+            print 'Not Found'
+
+
+@command
+@arg('index', type=int)
+def update(index, todo):
+    with db() as todos:
+        try:
+            todos[index] = todo
+        except:
+            print 'Not Found'
+
+
+@command
+def list():
+    with db() as todos:
+        for i in range(0, len(todos)):
+            print i, "'%s'" % todos[i]
+
+
+@command
+def reset():
+    with db() as todos:
+        todos[:] = []
+
+main()
