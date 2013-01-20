@@ -38,7 +38,7 @@ def delete(index):
     with db() as todos:
         try:
             del todos[index]
-        except:
+        except KeyError:
             print 'Not Found'
 
 
@@ -48,7 +48,7 @@ def update(index, todo):
     with db() as todos:
         try:
             todos[index] = todo
-        except:
+        except KeyError:
             print 'Not Found'
 
 
