@@ -6,6 +6,7 @@ Todo.py is a dead easy todo list runs on your command line lets you simply get t
 
 Install
 -------
+
 .. code-block::
 
     $ pip install todo.py
@@ -14,12 +15,14 @@ Usage
 -----
 
 Add todos
+
 .. code-block::
 
     $ todo add 'Hello World!'
     $ todo add 'Howdy you?'
 
 List todos
+
 .. code-block::
 
     $ todo list
@@ -27,6 +30,7 @@ List todos
     1 'Howdy you?'
 
 Update todos
+
 .. code-block::
 
     $ todo update 1 'How are you doing today?'
@@ -35,6 +39,7 @@ Update todos
     1 'How are you doing today?'
 
 Delete todos
+
 .. code-block::
 
     $ todo delete 0
@@ -42,6 +47,7 @@ Delete todos
     0 'How are you doing today?'
 
 Reset todos
+
 .. code-block::
 
     $ todo reset
