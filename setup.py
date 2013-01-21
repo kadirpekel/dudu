@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='todo.py',
-    scripts=['todo'],
+    name='dudu',
+    scripts=['dudu'],
     version='0.0.1',
     description='get things done!',
     author='Kadir Pekel',

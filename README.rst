@@ -1,15 +1,15 @@
 =======
-Todo.py
+Dudu
 =======
 
-Todo.py is a dead easy todo list runs on your command line lets you simply get things done. 
+Dudu is a dead easy todo list runs on your command line lets you simply get things done. 
 
 Install
 -------
 
 .. code-block::
 
-    $ pip install todo.py
+    $ pip install dudu
 
 Usage
 -----
@@ -18,8 +18,8 @@ Show help
 
 .. code-block::
 
-    $ todo --help
-    usage: todo [-h] [-v] {add,delete,update,list,reset} ...
+    $ dudu --help
+    usage: dudu [-h] [-v] {add,delete,update,list,reset} ...
 
     positional arguments:
         {add,delete,update,list,reset}
@@ -32,14 +32,14 @@ Add
 
 .. code-block::
 
-    $ todo add 'Hello World!'
-    $ todo add 'Howdy you?'
+    $ dudu add 'Hello World!'
+    $ dudu add 'Howdy you?'
 
 List
 
 .. code-block::
 
-    $ todo list
+    $ dudu list
     0 n 'Hello World!'
     1 n 'Howdy you?'
 
@@ -47,8 +47,8 @@ Done
 
 .. code-block::
 
-    $ todo done 1
-    $ todo list
+    $ dudu done 1
+    $ dudu list
     0 n 'Hello World!'
     1 y 'Howdy you?'
 
@@ -56,8 +56,8 @@ Undone
 
 .. code-block::
 
-    $ todo undone 1
-    $ todo list
+    $ dudu undone 1
+    $ dudu list
     0 n 'Hello World!'
     1 n 'Howdy you?'
 
@@ -65,8 +65,8 @@ Update
 
 .. code-block::
 
-    $ todo update 1 'How are you doing today?'
-    $ todo list
+    $ dudu update 1 'How are you doing today?'
+    $ dudu list
     0 n 'Hello World!'
     1 n 'How are you doing today?'
 
@@ -74,16 +74,16 @@ Delete
 
 .. code-block::
 
-    $ todo delete 0
-    $ todo list
+    $ dudu delete 0
+    $ dudu list
     0 n 'How are you doing today?'
 
 Reset
 
 .. code-block::
 
-    $ todo reset
-    $ todo list
+    $ dudu reset
+    $ dudu list
     ...
 
 Enjoy!
