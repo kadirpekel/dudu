@@ -22,7 +22,7 @@ Show help
     usage: dudu [-h] [-v] {add,delete,update,list,reset,done,undone} ...
 
     positional arguments:
-        {add,delete,update,list,reset}
+        {add,delete,update,list,reset,done,undone}
 
     optional arguments:
         -h, --help            show this help message and exit
