@@ -14,6 +14,20 @@ Install
 Usage
 -----
 
+Show help
+
+.. code-block::
+
+    $ todo --help
+    usage: todo [-h] [-v] {add,delete,update,list,reset} ...
+
+    positional arguments:
+        {add,delete,update,list,reset}
+
+    optional arguments:
+        -h, --help            show this help message and exit
+        -v, --version         show program's version number and exit
+
 Add todos
 
 .. code-block::
