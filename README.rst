@@ -19,7 +19,7 @@ Show help
 .. code-block::
 
     $ dudu --help
-    usage: dudu [-h] [-v] {add,delete,update,list,reset} ...
+    usage: dudu [-h] [-v] {add,delete,update,list,reset,done,undone} ...
 
     positional arguments:
         {add,delete,update,list,reset}
