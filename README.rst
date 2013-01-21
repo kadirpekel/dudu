@@ -28,22 +28,40 @@ Show help
         -h, --help            show this help message and exit
         -v, --version         show program's version number and exit
 
-Add todos
+Add
 
 .. code-block::
 
     $ todo add 'Hello World!'
     $ todo add 'Howdy you?'
 
-List todos
+List
 
 .. code-block::
 
     $ todo list
-    0 'Hello World!'
-    1 'Howdy you?'
+    0 n 'Hello World!'
+    1 n 'Howdy you?'
 
-Update todos
+Done
+
+.. code-block::
+
+    $ todo done 1
+    $ todo list
+    0 n 'Hello World!'
+    1 y 'Howdy you?'
+
+Undone
+
+.. code-block::
+
+    $ todo undone 1
+    $ todo list
+    0 n 'Hello World!'
+    1 n 'Howdy you?'
+
+Update
 
 .. code-block::
 
@@ -52,7 +70,7 @@ Update todos
     0 'Hello World!'
     1 'How are you doing today?'
 
-Delete todos
+Delete
 
 .. code-block::
 
@@ -60,7 +78,7 @@ Delete todos
     $ todo list
     0 'How are you doing today?'
 
-Reset todos
+Reset
 
 .. code-block::
 

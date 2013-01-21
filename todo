@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from os import path
 import json
@@ -17,19 +18,17 @@ class db:
                 self.todos = json.loads(f.read())
         else:
             self.todos = []
-        self.orig = self.todos[:]
         return self.todos
 
     def __exit__(self, type, value, tb):
-        if self.todos != self.orig:
-            with open(self.path, 'w') as f:
-                f.write(json.dumps(self.todos))
+        with open(self.path, 'w') as f:
+            f.write(json.dumps(self.todos))
 
 
 @command
-def add(todo):
+def add(task):
     with db() as todos:
-        todos.append(todo)
+        todos.append({'task': task, 'done': False})
 
 
 @command
@@ -44,10 +43,10 @@ def delete(index):
 
 @command
 @arg('index', type=int)
-def update(index, todo):
+def update(index, task):
     with db() as todos:
         try:
-            todos[index] = todo
+            todos[index]['task'] = task
         except KeyError:
             print 'Not Found'
 
@@ -56,12 +55,33 @@ def update(index, todo):
 def list():
     with db() as todos:
         for i in range(0, len(todos)):
-            print i, "'%s'" % todos[i]
+            print "%s %s '%s'" % (i, 'y' if todos[i]['done'] else 'n',
+                                  todos[i]['task'])
 
 
 @command
 def reset():
     with db() as todos:
         todos[:] = []
+
+
+def flag(index, done):
+    with db() as todos:
+        try:
+            todos[index]['done'] = done
+        except KeyError:
+            print 'Not Found'
+
+
+@command
+@arg('index', type=int)
+def done(index):
+    flag(index, True)
+
+
+@command
+@arg('index', type=int)
+def undone(index):
+    flag(index, False)
 
 main()
