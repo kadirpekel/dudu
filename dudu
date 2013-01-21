@@ -55,7 +55,7 @@ def update(index, task):
 def list():
     with db() as todos:
         for i in range(0, len(todos)):
-            print "%s %s '%s'" % (i, 'y' if todos[i]['done'] else 'n',
+            print "%s %s '%s'" % (i, u'✔' if todos[i]['done'] else u'✘',
                                   todos[i]['task'])
 
 
