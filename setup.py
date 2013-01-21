@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='dudu',
     scripts=['dudu'],
-    version='0.0.1',
+    version='0.0.2',
     description='get things done!',
     author='Kadir Pekel',
     author_email='kadirpekel@gmail.com',
