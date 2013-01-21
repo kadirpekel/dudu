@@ -67,8 +67,8 @@ Update
 
     $ todo update 1 'How are you doing today?'
     $ todo list
-    0 'Hello World!'
-    1 'How are you doing today?'
+    0 n 'Hello World!'
+    1 n 'How are you doing today?'
 
 Delete
 
@@ -76,7 +76,7 @@ Delete
 
     $ todo delete 0
     $ todo list
-    0 'How are you doing today?'
+    0 n 'How are you doing today?'
 
 Reset
 
