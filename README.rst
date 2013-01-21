@@ -1,5 +1,5 @@
 =======
-TODO.py
+Todo.py
 =======
 
 Todo.py is a dead easy todo list runs on your command line lets you simply get things done. 
