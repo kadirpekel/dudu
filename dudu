@@ -7,7 +7,7 @@ from komandr import command, arg, main
 
 
 class db:
-    _PATH = '/tmp/todo.db'
+    _PATH = path.expanduser('~/.dudu')
 
     def __init__(self, path=None):
         self.path = path or self._PATH
