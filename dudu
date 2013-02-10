@@ -52,10 +52,18 @@ def update(index, task):
 
 
 @command
-def list():
+@arg('status', '-s', type=str)
+def list(status=None):
     with db() as todos:
         for i in range(0, len(todos)):
-            print "%s %s '%s'" % (i, u'✔' if todos[i]['done'] else u'✘',
+            if 'done' == status:
+                if todos[i]['done']:
+                    print u"%s ✔ '%s'" % (i, todos[i]['task'])
+            elif 'undone' == status:
+                if not todos[i]['done']:
+                    print u"%s ✘ '%s'" % (i, todos[i]['task'])
+            else:
+                print "%s %s '%s'" % (i, u'✔' if todos[i]['done'] else u'✘',
                                   todos[i]['task'])
 
 
